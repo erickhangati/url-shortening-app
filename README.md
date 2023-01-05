@@ -23,6 +23,6 @@ If there are any errors they will be displayed as feedback.
 3. React JS
 4. APIs (URL Shortening)
 
-## Live link to the QR code component
+## Live link to the URL Shortening API App
 
 [https://eric-url-shortening-app.netlify.app/](https://eric-url-shortening-app.netlify.app/ "Frontend Mentor Challenge - URL Shortening API App")
