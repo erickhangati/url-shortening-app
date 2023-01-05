@@ -1,0 +1,17 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.section {
+  padding: 8rem 0;
+
+  @include mixins.respond(tab-land) {
+    padding: 6rem 0;
+  }
+
+  @include mixins.respond(tab-pot) {
+    padding: 4rem 0;
+  }
+
+  @include mixins.respond(phone-lg) {
+    padding: 2rem 0;
+  }
+}

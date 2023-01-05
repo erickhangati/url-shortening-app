@@ -1,0 +1,8 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.logo {
+  @include mixins.respond(tab-land) {
+    width: 11rem;
+    height: auto;
+  }
+}

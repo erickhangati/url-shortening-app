@@ -1,0 +1,19 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.social-media {
+  display: flex;
+  gap: 3rem;
+
+  @include mixins.respond(tab-pot) {
+    justify-self: center;
+  }
+
+  &__icon {
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &__icon:hover {
+    fill: var(--cyan);
+  }
+}

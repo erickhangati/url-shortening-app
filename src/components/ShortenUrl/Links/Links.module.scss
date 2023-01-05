@@ -1,0 +1,14 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.links {
+  list-style: none;
+  margin-top: 3rem;
+
+  @include mixins.respond(tab-pot) {
+    margin-top: 5rem;
+  }
+
+  @include mixins.respond(phone-lg) {
+    margin-top: 15rem;
+  }
+}

@@ -1,0 +1,53 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.card-item {
+  padding: 3rem;
+  background-color: white;
+  border-radius: 0.8rem;
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include mixins.respond(tab-pot) {
+    text-align: center;
+  }
+
+  &__icon {
+    width: 8rem;
+    height: 8rem;
+    padding: 2rem;
+    border-radius: 50%;
+    background: var(--dark-violet);
+
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+
+    @include mixins.respond(tab-pot) {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    & svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  & h2 {
+    margin-top: 4rem;
+    font-size: 2rem;
+    color: var(--very-dark-Blue);
+  }
+
+  & p {
+    color: var(--grayish-violet);
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+}

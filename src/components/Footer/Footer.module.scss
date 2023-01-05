@@ -1,0 +1,25 @@
+@use "../../styles/mixins.scss" as mixins;
+
+.footer {
+  padding: 8rem 0;
+  background-color: var(--very-dark-violet);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 0.8fr repeat(3, 0.4fr) 0.5fr;
+    column-gap: 2rem;
+
+    @include mixins.respond(tab-pot) {
+      grid-template-columns: 1fr;
+      row-gap: 4.8rem;
+    }
+  }
+
+  &__logo {
+    fill: white;
+
+    @include mixins.respond(tab-pot) {
+      justify-self: center;
+    }
+  }
+}

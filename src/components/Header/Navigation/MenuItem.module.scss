@@ -1,0 +1,10 @@
+.menu-item {
+  color: var(--grayish-violet);
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--very-dark-Blue);
+  }
+}

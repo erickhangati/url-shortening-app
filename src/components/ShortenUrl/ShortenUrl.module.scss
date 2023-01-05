@@ -1,0 +1,11 @@
+@use "../../styles/mixins.scss" as mixins;
+
+.section--shorten-url {
+  background-color: #ebebeb;
+  position: relative;
+  padding-bottom: 10rem;
+
+  @include mixins.respond(tab-pot) {
+    padding-bottom: 8rem;
+  }
+}

@@ -1,0 +1,10 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+
+  @include mixins.respond(tab-pot) {
+    width: 90%;
+  }
+}

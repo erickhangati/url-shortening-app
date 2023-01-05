@@ -1,0 +1,31 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 0.1fr 1fr 0.1fr 1fr;
+  align-items: center;
+
+  @include mixins.respond(tab-pot) {
+    grid-template-columns: 1fr;
+  }
+
+  &--2 {
+    margin-top: 8rem;
+  }
+
+  &--3 {
+    margin-top: 16rem;
+
+    @include mixins.respond(tab-pot) {
+      margin-top: 8rem;
+    }
+  }
+
+  & hr {
+    border: 5px solid var(--cyan);
+
+    @include mixins.respond(tab-pot) {
+      transform: rotate(90deg);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  & span {
+    color: var(--grayish-violet);
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  & span:hover {
+    color: var(--very-dark-Blue);
+  }
+
+  @include mixins.respond(tab-pot) {
+    display: none;
+  }
+}

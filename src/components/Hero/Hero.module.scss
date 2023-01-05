@@ -1,0 +1,94 @@
+@use "../../styles/mixins.scss" as mixins;
+
+.hero {
+  background-image: url("../../images/illustration-working.svg");
+  background-repeat: no-repeat;
+  background-position: center right -10%;
+  background-size: 48%;
+  padding-bottom: 30rem;
+
+  @include mixins.respond(tab-land) {
+    padding: 5rem 0;
+    padding-bottom: 20rem;
+  }
+
+  @include mixins.respond(tab-pot) {
+    padding-bottom: 15rem;
+  }
+
+  @include mixins.respond(phone-lg) {
+    background-size: 90%;
+    background-position: top right -20%;
+    padding-bottom: 18rem;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mixins.respond(phone-lg) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include mixins.respond(phone-lg) {
+      margin-top: -3rem;
+      gap: 2rem;
+    }
+
+    & h2 {
+      font-size: 7rem;
+      font-weight: 700;
+      color: var(--very-dark-Blue);
+      line-height: 1.15;
+
+      @include mixins.respond(tab-land) {
+        font-size: 5rem;
+      }
+
+      @include mixins.respond(tab-pot) {
+        font-size: 4rem;
+      }
+    }
+
+    & p {
+      font-size: 2rem;
+      line-height: 1.5;
+      color: var(--grayish-violet);
+    }
+
+    & button {
+      margin-top: 3rem;
+      align-self: start;
+
+      @include mixins.respond(phone-lg) {
+        align-self: center;
+      }
+    }
+
+    &__button {
+      font-size: 2rem;
+      padding: 1.2rem 3.8rem;
+    }
+
+    @include mixins.respond(phone-lg) {
+      text-align: center;
+      padding: 1rem;
+      padding-top: 0;
+
+      grid-row: 2 / 3;
+    }
+  }
+
+  &-blank {
+    @include mixins.respond(phone-lg) {
+      grid-row: 1 / 2;
+    }
+  }
+}

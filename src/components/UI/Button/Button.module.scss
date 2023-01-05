@@ -1,0 +1,16 @@
+.button {
+  border: 0;
+  padding: 0.8rem 2.6rem;
+  border-radius: 10rem;
+  color: white;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 1.4rem;
+  background-color: var(--cyan);
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--cyan-hover);
+  }
+}

@@ -1,0 +1,79 @@
+@use "../../../styles/mixins.scss" as mixins;
+
+.form {
+  padding: 5rem;
+  border-radius: 1rem;
+  background-image: url("../../../images/bg-shorten-desktop.svg"),
+    linear-gradient(var(--dark-violet), var(--dark-violet));
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+
+  @include mixins.respond(phone-lg) {
+    background-image: url("../../../images/bg-shorten-mobile.svg"),
+      linear-gradient(var(--dark-violet), var(--dark-violet));
+  }
+
+  &.error {
+    @include mixins.respond(phone-lg) {
+      padding: 5rem 3rem;
+    }
+
+    & form {
+      @include mixins.respond(phone-lg) {
+        row-gap: 5rem;
+      }
+    }
+  }
+
+  @include mixins.respond(tab-land) {
+    padding: 3rem;
+  }
+
+  & form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    position: relative;
+
+    @include mixins.respond(phone-lg) {
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  & form p {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 7.2rem;
+    left: 0;
+    font-style: italic;
+    color: var(--red);
+  }
+
+  & form input {
+    height: 4rem;
+    border-radius: 0.8rem;
+    outline: none;
+    border: 0;
+    padding: 3rem;
+    font-size: 1.8rem;
+    font-family: inherit;
+  }
+
+  & form input.error {
+    outline: 3px solid var(--red);
+  }
+
+  & form input.error::placeholder {
+    color: var(--red-lighter);
+  }
+}
+
+.button {
+  padding: 1rem 4rem;
+  border-radius: 0.8rem;
+  font-size: 1.8rem;
+}
