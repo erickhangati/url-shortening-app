@@ -9,6 +9,7 @@ import styles from "./Form.module.scss";
 const Form = () => {
   const [inputError, setInputError] = useState("");
   const [inputValue, setInputValue] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const linkCtx = useContext(LinkContext);
 
   const inputHandler = (e) => {
@@ -24,6 +25,9 @@ const Form = () => {
 
     // API fetch request to shorten URL.
     try {
+      // Set is submitting to true
+      setIsSubmitting(true);
+
       const response = await fetch(
         `https://api.shrtco.de/v2/shorten?url=${inputValue}`
       );
@@ -40,6 +44,9 @@ const Form = () => {
         copied: false,
       };
 
+      // Set is submitting to false
+      setIsSubmitting(false);
+
       // Add link to our list.
       linkCtx.setLinks((previousLinks) => {
         return [...previousLinks, transformedData];
@@ -48,6 +55,9 @@ const Form = () => {
       // Clear shorten URL input field.
       setInputValue("");
     } catch (error) {
+      // Set is submitting to false
+      setIsSubmitting(false);
+
       let errorMsg;
 
       // Get appropiate error message.
@@ -107,7 +117,13 @@ const Form = () => {
           className={inputError ? styles.error : ""}
           value={inputValue}
         />
-        <Button className={styles.button}>Shorten It!</Button>
+        <Button
+          className={`${styles.button}${
+            isSubmitting ? ` ${styles.submitting}` : ""
+          }`}
+        >
+          {isSubmitting ? "Shortening..." : "Shorten It!"}
+        </Button>
         {inputError && <p>{inputError}</p>}
       </form>
     </Container>
